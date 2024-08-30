@@ -1,0 +1,12 @@
+require "standard/rake"
+
+task default: %w[test run]
+
+task :test do
+  ruby "test/gilded_rose_test.rb"
+end
+
+task :run do
+  days = ENV["DAYS"] || 2
+  ruby "src/main.rb #{days}"
+end
